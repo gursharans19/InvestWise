@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestWise Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #181818; /* Dark background */
+        }
+
+        .sidebar {
+            background-color: #1a1a1a; /* Darker sidebar */
+        }
+
+        .header {
+            background-color: #2a2a2a; /* Dark header */
+        }
+
+        .card {
+            background-color: #242424; /* Dark card background */
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-link {
+            color: #58a6ff; /* Light blue for links */
+        }
+
+        .chart {
+            height: 300px; /* Adjust height as needed */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="flex">
+        <aside class="w-64 h-screen sidebar shadow-lg fixed">
+            <div class="py-5 px-6">
+                <h2 class="text-2xl font-bold text-white mb-10">InvestWise</h2>
+                <nav class="space-y-4">
+                    <a href="dashboard.html" class="flex items-center text-white hover:text-neutral-300 py-2 rounded-md">
+                        <span class="material-icons-outlined">dashboard</span>
+                        <span class="ml-3">Dashboard</span>
+                    </a>
+                    <a href="market.html" class="flex items-center text-white hover:text-neutral-300 py-2 rounded-md">
+                        <span class="material-icons-outlined">trending_up</span>
+                        <span class="ml-3">Market</span>
+                    </a>
+                    <a href="portfolio.html" class="flex items-center text-white hover:text-neutral-300 py-2 rounded-md">
+                        <span class="material-icons-outlined">account_balance_wallet</span>
+                        <span class="ml-3">Portfolio</span>
+                    </a>
+                    <a href="help.html" class="flex items-center text-white hover:text-neutral-300 py-2 rounded-md">
+                        <span class="material-icons-outlined">help_outline</span>
+                        <span class="ml-3">Help & Support</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <div class="flex-1 min-h-screen p-6 ml-64">
+            <!-- Header with Search Bar -->
+            <header class="flex justify-between items-center mb-8 header p-4 z-50">
+                <input type="text" placeholder="Search stocks, ETFs, options..."
+                    class="w-1/2 px-4 py-2 border border-neutral-600 rounded-md bg-neutral-800 text-white placeholder-neutral-500">
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-neutral-600 focus:outline-none">
+                        <span class="material-icons-outlined text-white">notifications</span>
+                    </button>
+                    <a href="profile.html" class="p-2 rounded-full hover:bg-neutral-600 focus:outline-none">
+                        <span class="material-icons-outlined text-white">account_circle</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Dashboard Overview -->
+                <div class="flex flex-col space-y-6">
+                    <div class="card flex flex-col justify-between">
+                        <h3 class="text-white font-medium">Portfolio Overview</h3>
+                        <div>
+                            <h1 class="text-4xl font-bold text-white">$124,567.89</h1>
+                            <p class="text-sm text-green-400">+ $1,234.56 (+1.12%)</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-white font-medium">Market Highlights</h3>
+                        <ul class="text-sm mt-4 text-white space-y-2">
+                            <li>S&P 500 <span class="text-green-400">+0.8%</span></li>
+                            <li>NASDAQ <span class="text-red-600">-0.3%</span></li>
+                            <li>DOW <span class="text-green-400">+0.5%</span></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-white font-medium">News Feed</h3>
+                        <ul class="mt-4 text-sm text-white space-y-2">
+                            <li>Tech Stocks Surge on AI Advancements</li>
+                            <li>Federal Reserve Hints at Rate Cut</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Chart Section -->
+                <div class="card chart">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Watchlist Section -->
+            <section class="card mt-8">
+                <h3 class="text-lg font-medium text-white mb-4">Watchlist</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-4 border border-neutral-600 rounded-md bg-neutral-800 flex flex-col">
+                        <h4 class="text-xl font-bold text-white">AAPL</h4>
+                        <p class="text-sm text-neutral-400">Apple Inc.</p>
+                        <p class="text-2xl font-semibold text-white">$150.25</p>
+                        <p class="text-sm text-green-400">+2.3%</p>
+                    </div>
+                    <div class="p-4 border border-neutral-600 rounded-md bg-neutral-800 flex flex-col">
+                        <h4 class="text-xl font-bold text-white">GOOGL</h4>
+                        <p class="text-sm text-neutral-400">Alphabet Inc.</p>
+                        <p class="text-2xl font-semibold text-white">$2,750.00</p>
+                        <p class="text-sm text-red-600">-1.2%</p>
+                    </div>
+                    <div class="p-4 border border-neutral-600 rounded-md bg-neutral-800 flex flex-col">
+                        <h4 class="text-xl font-bold text-white">TSLA</h4>
+                        <p class="text-sm text-neutral-400">Tesla Inc.</p>
+                        <p class="text-2xl font-semibold text-white">$800.50</p>
+                        <p class="text-sm text-green-400">+3.7%</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Accounts Section -->
+            <section class="card mt-8">
+                <h3 class="text-lg font-medium text-white mb-4">Accounts</h3>
+                <div class="space-y-4">
+                    <div class="p-4 border border-neutral-600 rounded-md flex justify-between bg-neutral-800">
+                        <div>
+                            <h4 class="font-semibold text-white">TFSA</h4>
+                            <p class="text-sm text-neutral-400">Tax-Free Savings Account</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xl font-bold text-white">$24,325.30</p>
+                            <p class="text-sm text-green-400">+5.0%</p>
+                        </div>
+                    </div>
+                    <div class="p-4 border border-neutral-600 rounded-md flex justify-between bg-neutral-800">
+                        <div>
+                            <h4 class="font-semibold text-white">RRSP</h4>
+                            <p class="text-sm text-neutral-400">Retirement Savings Plan</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xl font-bold text-white">$1,200.30</p>
+                            <p class="text-sm text-green-400">+2.0%</p>
+                        </div>
+                    </div>
+                    <div class="p-4 border border-neutral-600 rounded-md flex justify-between bg-neutral-800">
+                        <div>
+                            <h4 class="font-semibold text-white">FHSA</h4>
+                            <p class="text-sm text-neutral-400">First Home Savings Account</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xl font-bold text-white">$14,243.32</p>
+                            <p class="text-sm text-green-400">+3.2%</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Chart.js Script -->
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Portfolio Value',
+                    data: [120000, 125000, 130000, 128000, 132000, 135000, 140000],
+                    backgroundColor: 'rgba(88, 166, 255, 0.5)',
+                    borderColor: 'rgba(88, 166, 255, 1)',
+                    borderWidth: 2,
+                    fill: true,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- Material Icons for Icons in Sidebar and Top Bar -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</body>
+
+</html>

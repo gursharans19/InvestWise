@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestWise Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #181818; /* Dark background */
+        }
+
+        .sidebar {
+            background-color: #1a1a1a; /* Darker sidebar */
+        }
+
+        .header {
+            background-color: #2a2a2a; /* Dark header */
+        }
+
+        .card {
+            background-color: #242424; /* Dark card background */
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-link {
+            color: #58a6ff; /* Light blue for links */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Sidebar -->
+    <div class="flex">
+        <aside class="w-64 h-screen sidebar shadow-lg fixed">
+            <div class="py-5 px-6">
+                <a href="index.html">
+                    <h2 class="text-xl font-bold text-white mb-8 mt-4">InvestWise</h2>
+                </a>
+                <nav class="space-y-6">
+                    <a href="dashboard.html" class="flex items-center text-white hover:text-neutral-300">
+                        <span class="material-icons-outlined">dashboard</span>
+                        <span class="ml-3">Dashboard</span>
+                    </a>
+                    <a href="market.html" class="flex items-center text-white hover:text-neutral-300 bg-gray-700 rounded py-1 pl-2">
+                        <span class="material-icons-outlined">trending_up</span>
+                        <span class="ml-3">Market</span>
+                    </a>
+                    <a href="portfolio.html" class="flex items-center text-white hover:text-neutral-300">
+                        <span class="material-icons-outlined">account_balance_wallet</span>
+                        <span class="ml-3">Portfolio</span>
+                    </a>
+                    <a href="help.html" class="flex items-center text-white hover:text-neutral-300">
+                        <span class="material-icons-outlined">help_outline</span>
+                        <span class="ml-3">Help & Support</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <div class="flex-1 min-h-screen p-8 ml-64">
+            <!-- Header with Search Bar -->
+            <header class="flex justify-between items-center mb-8 header p-4 z-50">
+                <input type="text" placeholder="Search stocks, ETFs, options..." class="w-2/3 px-4 py-2 border border-neutral-600 rounded-md bg-neutral-800 text-white placeholder-neutral-500">
+                <div class="flex items-center">
+                    <button class="p-2 rounded-full hover:bg-neutral-600 focus:outline-none">
+                        <span class="material-icons-outlined text-white">notifications</span>
+                    </button>
+                    <a href="profile.html" class="p-2 rounded-full hover:bg-neutral-600 focus:outline-none">
+                        <span class="material-icons-outlined text-white">account_circle</span>
+                    </a>
+                </div>
+            </header>
+            <main class="flex-1 p-8 mt-16">
+                <h1 class="text-2xl font-semibold mb-6 text-white">Markets</h1>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card">
+                        <h2 class="text-xl font-semibold text-white">AAPL</h2>
+                        <p class="text-gray-400">Apple Inc.</p>
+                        <p class="text-white text-lg">$150.25</p>
+                        <p class="text-green-400">+2.5%</p>
+                        <p class="text-gray-400">Volume: 10.5M</p>
+                        <div class="mt-4 flex justify-between">
+                            <button class="bg-gray-700 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-gray-600">Buy</button>
+                            <button class="bg-gray-700 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-gray-600">Sell</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h2 class="text-xl font-semibold text-white">GOOGL</h2>
+                        <p class="text-gray-400">Alphabet Inc.</p>
+                        <p class="text-white text-lg">$2,750.00</p>
+                        <p class="text-red-600">-0.8%</p>
+                        <p class="text-gray-400">Volume: 1.2M</p>
+                        <div class="mt-4 flex justify-between">
+                            <button class="bg-gray-700 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-gray-600">Buy</button>
+                            <button class="bg-gray-700 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-gray-600">Sell</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h2 class="text-xl font-semibold text-white">SPY</h2>
+                        <p class="text-gray-400">SPDR S&P 500 ETF Trust</p>
+                        <p class="text-white text-lg">$450.75</p>
+                        <p class="text-green-400">+0.3%</p>
+                        <p class="text-gray-400">Volume: 50.2M</p>
+                        <div class="mt-4 flex justify-between">
+                            <button class="bg-gray-700 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-gray-600">Buy</button>
+                            <button class="bg-gray-700 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-gray-600">Sell</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h2 class="text-xl font-semibold text-white">TSLA</h2>
+                        <p class="text-gray-400">Tesla, Inc.</p>
+                        <p class="text-white text-lg">$800.50</p>
+                        <p class="text-green-400">+1.2%</p>
+                        <p class="text-gray-400">Volume: 15.7M</p>
+                        <div class="mt-4 flex justify-between">
+                            <button class="bg-gray-700 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-gray-600">Buy</button>
+                            <button class="bg-gray-700 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-gray-600">Sell</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h2 class="text-xl font-semibold text-white">VTI</h2>
+                        <p class="text-gray-400">Vanguard Total Stock Market ETF</p>
+                        <p class="text-white text-lg">$225.30</p>
+                        <p class="text-red-600">-0.1%</p>
+                        <p class="text-gray-400">Volume: 3.8M</p>
+                        <div class="mt-4 flex justify-between">
+                            <button class="bg-gray-700 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-gray-600">Buy</button>
+                            <button class="bg-gray-700 text-white px-3 py-1 rounded-full text-xs font-semibold hover:bg-gray-600">Sell</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Material Icons for Icons in Sidebar and Top Bar -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</body>
+
+</html>

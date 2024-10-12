@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestWise Dashboard</title>
+    <!-- Tailwind CSS Library -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Background animation */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animated-background {
+            background: linear-gradient(270deg, #6EE7B7, #3B82F6, #9333EA, #6EE7B7);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Centered text on image */
+        .centered-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="bg-neutral-900">
+    <div class="min-h-screen flex flex-col animated-background">
+        <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-neutral-800 shadow-md">
+            <nav class="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
+                <a href="#" class="flex items-center">
+                    <span class="text-2xl font-semibold text-white">InvestWise</span>
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-white hover:text-teal-300">Home</a>
+                    <a href="#" class="text-white hover:text-teal-300">Features</a>
+                    <a href="#" class="text-white hover:text-teal-300">Pricing</a>
+                    <a href="#" class="text-white hover:text-teal-300">Contact</a>
+                    <a href="signup.html" class="bg-teal-600 hover:bg-teal-500 text-white px-4 py-2 rounded-lg cursor-pointer">Login / Sign Up</a>
+                </div>
+            </nav>
+        </header>
+
+        <main id="landing-content" class="flex-grow pt-20">
+            <section id="hero" class="relative bg-neutral-800 py-20">
+                <div class="absolute inset-0">
+                    <img src="https://example.com/your-background-image.jpg" alt="Investment Background" class="w-full h-full object-cover opacity-30">
+                </div>
+                <div class="container mx-auto px-4 relative z-10 text-center">
+                    <h1 class="text-5xl font-bold text-teal-500 mb-6 transition-transform transform hover:scale-105">Empower Your Investment Journey with InvestWise</h1>
+                    <p class="text-xl text-neutral-300 mb-8 transition-opacity opacity-90 hover:opacity-100">The innovative trading platform designed for both novice and experienced investors to manage their portfolios with ease and confidence.</p>
+                    <span class="bg-teal-600 text-white px-8 py-3 rounded-md text-lg hover:bg-teal-500 transition-all duration-300 cursor-pointer">Get Started</span>
+                </div>
+            </section>
+
+            <section id="features" class="py-20 bg-neutral-900">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center text-teal-500 mb-12">Key Features</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-neutral-800 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2 text-white">User-Friendly Dashboard</h3>
+                            <p class="text-neutral-300">Easily track your portfolio performance and market trends at a glance.</p>
+                        </div>
+                        <div class="bg-neutral-800 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2 text-white">Advanced Trading Tools</h3>
+                            <p class="text-neutral-300">Access powerful analytics and execution tools for informed decision-making.</p>
+                        </div>
+                        <div class="bg-neutral-800 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2 text-white">Real-Time Market Data</h3>
+                            <p class="text-neutral-300">Stay updated with live market information and personalized alerts.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative py-20">
+                <img src="investing-image.jpg" alt="Investing" class="w-full h-auto object-cover">
+                <div class="centered-text">
+                    <h2 class="text-4xl font-bold mb-6">Why Choose InvestWise?</h2>
+                    <ul class="space-y-4">
+                        <li class="bg-neutral-800 p-4 rounded-lg shadow-md text-center">Real-Time Data</li>
+                        <li class="bg-neutral-800 p-4 rounded-lg shadow-md text-center">Expert Insights</li>
+                        <li class="bg-neutral-800 p-4 rounded-lg shadow-md text-center">Community Support</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="testimonials" class="py-20 fade-in bg-neutral-800">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold text-center mb-12 text-teal-500">What Our Users Say</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-neutral-700 p-6 rounded-lg shadow-md transition scale-up">
+                            <p class="text-neutral-300 mb-4">"InvestWise has been a game changer for me! The user-friendly interface makes investing feel effortless."</p>
+                            <div class="flex items-center">
+                                <img src="https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=1234" alt="User Avatar" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="font-semibold">Sarah K.</p>
+                                    <p class="text-sm text-neutral-400">Finance Enthusiast</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-neutral-700 p-6 rounded-lg shadow-md transition scale-up">
+                            <p class="text-neutral-300 mb-4">"As a beginner, I found InvestWise incredibly helpful. The educational resources are top-notch!"</p>
+                            <div class="flex items-center">
+                                <img src="https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=5678" alt="User Avatar" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="font-semibold">Michael R.</p>
+                                    <p class="text-sm text-neutral-400">New Investor</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-neutral-700 p-6 rounded-lg shadow-md transition scale-up">
+                            <p class="text-neutral-300 mb-4">"The community support has been invaluable. I’ve learned so much from fellow investors!"</p>
+                            <div class="flex items-center">
+                                <img src="https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=9012" alt="User Avatar" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="font-semibold">Emily T.</p>
+                                    <p class="text-sm text-neutral-400">Community Member</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cta" class="py-20 bg-teal-600 text-center">
+                <h2 class="text-4xl font-bold mb-6">Start Your Investment Journey Today!</h2>
+                <p class="text-xl mb-8 text-neutral-800">Join a community of empowered investors and take control of your financial future.</p>
+                <a href="signup.html" class="bg-neutral-800 text-white px-8 py-4 rounded-lg text-lg hover:bg-neutral-700 transition duration-300 cursor-pointer">Create Your Free Account</a>
+            </section>
+        </main>
+
+        <footer id="main-footer" class="bg-neutral-800 text-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">InvestWise</h3>
+                        <p class="text-sm text-neutral-400">Empowering investors since 2025</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><span class="text-sm text-neutral-400 hover:text-white cursor-pointer">Home</span></li>
+                            <li><span class="text-sm text-neutral-400 hover:text-white cursor-pointer">Features</span></li>
+                            <li><span class="text-sm text-neutral-400 hover:text-white cursor-pointer">Pricing</span></li>
+                            <li><span class="text-sm text-neutral-400 hover:text-white cursor-pointer">Contact</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><span class="text-sm text-neutral-400 hover:text-white cursor-pointer">Terms of Service</span></li>
+                            <li><span class="text-sm text-neutral-400 hover:text-white cursor-pointer">Privacy Policy</span></li>
+                            <li><span class="text-sm text-neutral-400 hover:text-white cursor-pointer">Cookie Policy</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                        <ul class="space-y-2">
+                            <li><span class="text-sm text-neutral-400 hover:text-white cursor-pointer">Twitter</span></li>
+                            <li><span class="text-sm text-neutral-400 hover:text-white cursor-pointer">LinkedIn</span></li>
+                            <li><span class="text-sm text-neutral-400 hover:text-white cursor-pointer">Facebook</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-neutral-700 text-center">
+                    <p class="text-sm text-neutral-400">&copy; 2025 InvestWise. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
